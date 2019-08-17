@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Create!!</h1>
+</br>
+
+{{ error }}<br/>
+<form method = "POST" action = "{% url 'create'%}" enctype="multipart/form-data">
+{% csrf_token %}
+
+Title:</br>
+<input type = "text" name = "title"/></br>
+
+Body:</br>
+<input type = "textbox" name = "body"/></br>
+
+Url:</br>
+<input type = "text" name = "url"/></br>
+
+Publication Date:</br>
+<input type = "datetime" name = "pub_date"/></br>
+
+Image:</br>
+<input type ="file" name = "image" /></br>
+
+UpVotes:</br>
+<input type ="integerfield" name = "votes_total"/></br>
+
+Comments:</br>
+<input type ="text" name = "comments"/></br>
+
+Username:</br>
+<input type ="foreignkey" name = "username"/></br>
+
+</br>
+
+<input class = 'btn btn-outline-success' type="submit" value="Upload Your Product"/>
+</form>
+
+{% endblock %}
+
